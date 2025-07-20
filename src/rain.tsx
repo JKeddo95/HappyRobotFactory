@@ -1,6 +1,7 @@
 // Rain.tsx
 import React from "react";
 import { Smiley } from "./smiley";
+import { Robot } from "./robot";
 import "./Rain.css";
 
 const Rain: React.FC = () => {
@@ -17,7 +18,7 @@ const Rain: React.FC = () => {
     <div className="rain-container">
       {drops.map(({ id, left, size, duration, delay }) => (
         <div key={id} className="drop" style={{ left, width: size, height: size, animationDuration: duration, animationDelay: delay }}>
-          <Smiley width="100%" height="100%" />
+          {id % 2 == 0 ? <Smiley width="100%" height="100%" /> : <Robot width="100%" height="100%" />}
         </div>
       ))}
     </div>
